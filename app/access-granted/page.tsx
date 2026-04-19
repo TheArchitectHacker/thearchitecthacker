@@ -26,20 +26,7 @@ export default function AccessGranted() {
   return (
     <main className="bg-black text-white min-h-screen flex flex-col items-center px-6 font-mono relative overflow-hidden">
       
-      {/* SCANLINES OVERLAY */}
-      <div className="fixed inset-0 pointer-events-none z-50 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.02)_0px,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_3px)]"></div>
-
-      {/* BACKGROUND VIDEO/IMAGE (Optioneel: Vervang door je Luma video URL) */}
-      <div className="absolute inset-0 opacity-20 z-0">
-        <Image 
-          src="/1000070646.png" 
-          alt="Background" 
-          fill 
-          className="object-cover grayscale hue-rotate-90"
-        />
-      </div>
-
-      {/* 1. HET LOGO (Bovenaan gecentreerd) */}
+        {/* 1. HET LOGO (Bovenaan gecentreerd) */}
       <section className="w-full max-w-7xl flex flex-col items-center pt-16 pb-12 z-10">
         <div className="relative w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">
           <Image 
