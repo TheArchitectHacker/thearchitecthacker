@@ -95,7 +95,7 @@ export default function Home() {
       <section className="max-w-5xl w-full mt-40 flex flex-col md:flex-row items-center gap-12 px-4 z-10">
         <div className="relative w-full md:w-1/2 aspect-[3/4] shadow-[0_0_50px_rgba(220,38,38,0.2)]">
           <Image 
-            src="/1000070646.png" 
+            src="/Paradox_Shift_Cover.jpeg" 
             alt="The Paradox Shift E-book Cover"
             fill
             className="object-cover border border-zinc-800"
@@ -187,7 +187,7 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-8 text-zinc-400">
           <a href="https://tiktok.com/@thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ TIKTOK ]</a>
           <a href="https://instagram.com/thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ INSTAGRAM ]</a>
-          <a href="https://x.com/architecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ X_STATION ]</a>
+          <a href="https://x.com/thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ X_STATION ]</a>
         </div>
 
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 border-t border-zinc-900/50 pt-8">
