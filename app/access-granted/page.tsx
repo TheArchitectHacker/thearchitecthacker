@@ -39,12 +39,25 @@ export default function AccessGranted() {
         />
       </div>
 
-      <section className="relative z-10 flex flex-col items-center pt-20 text-center max-w-2xl">
+      {/* 1. HET LOGO (Bovenaan gecentreerd) */}
+      <section className="w-full max-w-7xl flex flex-col items-center pt-16 pb-12 z-10">
+        <div className="relative w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+          <Image 
+            src="/The_Architect_Hacker_logo.png" 
+            alt="The Architect Hacker Logo"
+            fill 
+            priority 
+            className="object-contain" 
+          />
+        </div>
+      </section>
+
+      <section className="relative z-10 flex flex-col items-center text-center max-w-2xl">
         <div className="text-red-600 text-xs mb-4 tracking-[0.3em] animate-pulse">
           {status}
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-black uppercase mb-6 tracking-tighter">
+        <h1 className="text-4xl md:text-5xl font-black uppercase mb-6 tracking-tighter leading-tight">
           Welcome to the <span className="text-red-600">Other Side.</span>
         </h1>
 
