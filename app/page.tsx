@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* 2. HERO SECTION */}
       <section className="text-center max-w-3xl z-10 py-10">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 uppercase">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 uppercase leading-tight">
           You’re not <span className="text-red-600 animate-pulse">stuck.</span><br />
           You’re programmed.
         </h1>
@@ -65,7 +65,7 @@ export default function Home() {
         <div className="absolute -top-3 left-4 bg-black px-2 text-[10px] text-zinc-500 uppercase tracking-widest">
           Intercepted_Message
         </div>
-        <p className="text-gray-300 leading-relaxed min-h-15">
+        <p className="text-gray-300 leading-relaxed min-h-[60px]">
           {text}
           <span className="inline-block w-2 h-5 bg-red-600 ml-1 animate-ping"></span>
         </p>
@@ -93,9 +93,9 @@ export default function Home() {
 
       {/* 5. THE BLUEPRINT VISUAL (Wat ze krijgen) */}
       <section className="max-w-5xl w-full mt-40 flex flex-col md:flex-row items-center gap-12 px-4 z-10">
-        <div className="relative w-full md:w-1/2 aspect-3/4 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
+        <div className="relative w-full md:w-1/2 aspect-[3/4] shadow-[0_0_50px_rgba(220,38,38,0.2)]">
           <Image 
-            src="/Paradox_Shift.jpeg" 
+            src="/1000070646.png" 
             alt="The Paradox Shift E-book Cover"
             fill
             className="object-cover border border-zinc-800"
@@ -138,23 +138,23 @@ export default function Home() {
       </section>
 
       {/* 7. OFFER SECTION */}
-      <section id="offer" className="max-w-xl w-full text-center mt-40 border-2 border-red-600 p-10 bg-red-950/5 shadow-[0_0_40px_rgba(220,38,38,0.1)] mb-32 z-10">
-        <h2 className="text-3xl font-bold mb-6 tracking-tighter uppercase">
-          The_Initial_Payload
+      <section id="offer" className="max-w-xl w-full text-center mt-40 border-2 border-red-600 p-6 md:p-10 bg-red-950/5 shadow-[0_0_40px_rgba(220,38,38,0.1)] mb-20 z-10 mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tighter uppercase break-words overflow-hidden leading-tight">
+          The_Initial_<br className="block md:hidden" />Payload
         </h2>
 
-        <p className="text-zinc-400 mb-8 italic text-sm">
-          Een digitaal virus voor je beperkende overtuigingen. 
+        <p className="text-zinc-400 mb-8 italic text-sm leading-relaxed">
+          Een digitaal virus voor je beperkende overtuigingen.<br className="hidden md:block" /> 
           De-installeer de maatschappelijke ruis voor slechts €27.
         </p>
 
         <a
-          href="JE_LEMON_SQUEEZY_CHECKOUT_LINK"
+          href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/ff8b778e-4424-444d-b3a2-12ec3fdd54c6"
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-red-600 text-black py-4 uppercase font-black tracking-widest hover:bg-white transition-all duration-300 text-center"
+          className="block w-full bg-red-600 text-black py-4 uppercase font-black tracking-widest hover:bg-white transition-all duration-300 text-center text-sm md:text-base shadow-[0_0_20px_rgba(220,38,38,0.4)]"
         >
-          Download Payload
+          [ EXECUTE_PAYLOAD_DOWNLOAD ]
         </a>
         
         <p className="mt-4 text-[10px] text-zinc-600 uppercase tracking-widest">
@@ -162,15 +162,43 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 8. SYSTEM STATUS FOOTER */}
-      <footer className="w-full max-w-7xl py-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[10px] text-zinc-600 tracking-widest uppercase z-10">
-        <div className="mb-4 md:mb-0">
-          Last_Infiltration: {new Date().toLocaleDateString()} // Location: Unknown
+      {/* 7.5 MASTERCLASS TEASER */}
+      <section className="max-w-4xl w-full mb-32 px-6 py-12 border border-zinc-900 bg-zinc-950/20 text-center relative overflow-hidden z-10">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600/50 to-transparent"></div>
+        
+        <h3 className="text-red-600 text-[10px] tracking-[0.4em] mb-4 uppercase">Advanced_Training_Protocol</h3>
+        <h2 className="text-2xl md:text-4xl font-black uppercase mb-6 tracking-tighter">
+          The System Overhaul Masterclass
+        </h2>
+        <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8 font-mono leading-relaxed">
+          Van het begrijpen van de code naar het herschrijven van de realiteit. 
+          De volledige 8-weekse herprogrammering voor wie de 'Initial Payload' heeft overleefd.
+        </p>
+        
+        <div className="inline-block border border-zinc-800 px-6 py-2 text-zinc-600 text-[10px] uppercase tracking-[0.3em]">
+          Status: <span className="text-zinc-400">Restricted_Access</span> // Phase: <span className="text-red-900">Alpha_Testing</span>
         </div>
-        <div className="flex gap-8">
-          <span className="text-green-900">Connection: Secure</span>
-          <span className="animate-pulse">Active_Nodes: 1,402</span>
-          <span>© {new Date().getFullYear()} The Architect Hacker</span>
+      </section>
+
+      {/* 8. SYSTEM STATUS & SOCIALS */}
+      <footer className="w-full max-w-7xl py-12 border-t border-zinc-900 flex flex-col items-center gap-8 text-[10px] text-zinc-600 tracking-widest uppercase z-10">
+        
+        {/* SOCIAL LINKS */}
+        <div className="flex flex-wrap justify-center gap-8 text-zinc-400">
+          <a href="https://tiktok.com/@thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ TIKTOK ]</a>
+          <a href="https://instagram.com/thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ INSTAGRAM ]</a>
+          <a href="https://x.com/architecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ X_STATION ]</a>
+        </div>
+
+        <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 border-t border-zinc-900/50 pt-8">
+          <div className="mb-4 md:mb-0">
+            Last_Infiltration: {new Date().toLocaleDateString()} // Location: Unknown
+          </div>
+          <div className="flex gap-8">
+            <span className="text-green-900">Connection: Secure</span>
+            <span className="animate-pulse">Active_Nodes: 1,402</span>
+            <span>© {new Date().getFullYear()} The Architect Hacker</span>
+          </div>
         </div>
       </footer>
 
