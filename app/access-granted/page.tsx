@@ -56,7 +56,7 @@ export default function AccessGranted() {
 
           {/* DOWNLOAD KNOP - Hier linken we direct naar de PDF of LS download link */}
           <a
-            href="HIER_DE_DIRECTE_DOWNLOAD_LINK_VAN_LEMONSQUEEZY" 
+            href="https://app.lemonsqueezy.com/my-orders" 
             className="inline-block bg-white text-black px-12 py-4 uppercase font-black tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300"
           >
             Open Payload.pdf
