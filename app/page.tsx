@@ -187,7 +187,7 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-8 text-zinc-400">
           <a href="https://tiktok.com/@thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ TIKTOK ]</a>
           <a href="https://instagram.com/thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ INSTAGRAM ]</a>
-          <a href="https://x.com/thearchitecthacker" target="_blank" className="hover:text-red-600 transition-colors">[ X_STATION ]</a>
+          <a href="https://x.com/TheArchyHacker" target="_blank" className="hover:text-red-600 transition-colors">[ X_STATION ]</a>
         </div>
 
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 border-t border-zinc-900/50 pt-8">
