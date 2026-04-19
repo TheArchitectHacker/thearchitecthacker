@@ -65,7 +65,7 @@ export default function Home() {
         <div className="absolute -top-3 left-4 bg-black px-2 text-[10px] text-zinc-500 uppercase tracking-widest">
           Intercepted_Message
         </div>
-        <p className="text-gray-300 leading-relaxed min-h-[60px]">
+        <p className="text-gray-300 leading-relaxed min-h-15">
           {text}
           <span className="inline-block w-2 h-5 bg-red-600 ml-1 animate-ping"></span>
         </p>
@@ -93,7 +93,7 @@ export default function Home() {
 
       {/* 5. THE BLUEPRINT VISUAL (Wat ze krijgen) */}
       <section className="max-w-5xl w-full mt-40 flex flex-col md:flex-row items-center gap-12 px-4 z-10">
-        <div className="relative w-full md:w-1/2 aspect-[3/4] shadow-[0_0_50px_rgba(220,38,38,0.2)]">
+        <div className="relative w-full md:w-1/2 aspect-3/4 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
           <Image 
             src="/Paradox_Shift.jpeg" 
             alt="The Paradox Shift E-book Cover"
@@ -139,7 +139,7 @@ export default function Home() {
 
       {/* 7. OFFER SECTION */}
       <section id="offer" className="max-w-xl w-full text-center mt-40 border-2 border-red-600 p-6 md:p-10 bg-red-950/5 shadow-[0_0_40px_rgba(220,38,38,0.1)] mb-20 z-10 mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tighter uppercase break-words overflow-hidden leading-tight">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tighter uppercase wrap-break-word overflow-hidden leading-tight">
           The_Initial_<br className="block md:hidden" />Payload
         </h2>
 
@@ -164,7 +164,7 @@ export default function Home() {
 
       {/* 7.5 MASTERCLASS TEASER */}
       <section className="max-w-4xl w-full mb-32 px-6 py-12 border border-zinc-900 bg-zinc-950/20 text-center relative overflow-hidden z-10">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600/50 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-red-600/50 to-transparent"></div>
         
         <h3 className="text-red-600 text-[10px] tracking-[0.4em] mb-4 uppercase">Advanced_Training_Protocol</h3>
         <h2 className="text-2xl md:text-4xl font-black uppercase mb-6 tracking-tighter">
