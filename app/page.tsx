@@ -95,7 +95,7 @@ export default function Home() {
       <section className="max-w-5xl w-full mt-40 flex flex-col md:flex-row items-center gap-12 px-4 z-10">
         <div className="relative w-full md:w-1/2 aspect-[3/4] shadow-[0_0_50px_rgba(220,38,38,0.2)]">
           <Image 
-            src="/Paradox_Shift_Cover.jpeg" 
+            src="/Paradox_Shift.jpeg" 
             alt="The Paradox Shift E-book Cover"
             fill
             className="object-cover border border-zinc-800"
