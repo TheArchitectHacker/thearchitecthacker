@@ -175,9 +175,13 @@ export default function Home() {
           De volledige 8-weekse herprogrammering voor wie de 'Initial Payload' heeft overleefd.
         </p>
         
-        <div className="inline-block border border-zinc-800 px-6 py-2 text-zinc-600 text-[10px] uppercase tracking-[0.3em]">
-          Status: <span className="text-zinc-400">Restricted_Access</span> // Phase: <span className="text-red-900">Alpha_Testing</span>
-        </div>
+        <a 
+  href="/masterclass"
+  className="inline-block border border-red-600/50 bg-red-600/5 px-8 py-3 text-red-600 text-[10px] uppercase tracking-[0.4em] hover:bg-red-600 hover:text-black transition-all duration-500 group"
+>
+  [ UPGRADE_SYSTEM_ACCESS ]
+  <span className="block text-[8px] mt-1 text-zinc-500 group-hover:text-black">Request Enrollment Info</span>
+</a>
       </section>
 
       {/* 8. SYSTEM STATUS & SOCIALS */}
