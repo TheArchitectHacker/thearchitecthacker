@@ -33,7 +33,7 @@ export default function AccessGranted() {
           <p className="text-green-500">{`> Initializing_Source_Code_Download... [OK]`}</p>
           <p className="text-red-600 animate-pulse">{`> WARNING: Reality_Instability_Detected`}</p>
           <p className="text-zinc-500 border-t border-zinc-900 pt-3 mt-3">
-            {`Welcome, Architect. De broncode is nu beschikbaar voor jouw lokale systeem. Gebruik deze data om de fundamenten voor je 6ha landgoed in Portugal te leggen.`}
+            {`Welcome, Architect. De broncode is nu beschikbaar voor jouw lokale systeem.`}
           </p>
         </div>
 
