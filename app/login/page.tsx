@@ -3,14 +3,18 @@
 import React, { useState } from 'react';
 
 export default function RealityOSLogin() {
+  const [email, setEmail] = useState("");
   const [passkey, setPasskey] = useState("");
   const [status, setStatus] = useState("AWAITING_CREDENTIALS");
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("VERIFYING_ENCRYPTION...");
-    // Hier koppelen we later de database aan
-    setTimeout(() => setStatus("ACCESS_DENIED: UNAUTHORIZED_UID"), 2000);
+    
+    // TIJDELIJKE LOGIC - we koppelen dit later aan Supabase
+    setTimeout(() => {
+      setStatus("ERROR: INVALID_CREDENTIALS_OR_KEY_NOT_ACTIVATED");
+    }, 1500);
   };
 
   return (
@@ -26,14 +30,27 @@ export default function RealityOSLogin() {
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">
-          <div className="relative">
-            <label className="text-[10px] text-zinc-500 uppercase mb-2 block tracking-widest">Enter_Access_Key</label>
+          <div>
+            <label className="text-[10px] text-zinc-500 uppercase mb-2 block tracking-widest">Ident_Email</label>
+            <input 
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full bg-black border border-zinc-900 p-4 text-white focus:border-red-600 outline-none transition-all placeholder:text-zinc-800"
+              placeholder="architect@network.com"
+            />
+          </div>
+
+          <div>
+            <label className="text-[10px] text-zinc-500 uppercase mb-2 block tracking-widest">Access_Key</label>
             <input 
               type="password"
+              required
               value={passkey}
               onChange={(e) => setPasskey(e.target.value)}
               className="w-full bg-black border border-zinc-900 p-4 text-red-600 focus:border-red-600 outline-none transition-all placeholder:text-zinc-800"
-              placeholder="••••••••••••"
+              placeholder="ARCH-XXXX-XXXX"
             />
           </div>
 
@@ -42,10 +59,10 @@ export default function RealityOSLogin() {
           </button>
         </form>
 
-        <div className="mt-8 text-center">
-          <a href="/#offer" className="text-[9px] text-zinc-700 hover:text-red-600 transition-colors uppercase tracking-widest">
-            Lost your key? Re-acquire payload here.
-          </a>
+        <div className="mt-8 text-center border-t border-zinc-900 pt-6">
+          <p className="text-[9px] text-zinc-600 uppercase tracking-widest leading-relaxed">
+            New Architects must acquire a valid payload and key through official channels only.
+          </p>
         </div>
       </div>
     </div>
