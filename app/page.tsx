@@ -181,7 +181,7 @@ export default function Home() {
           <span className="block mt-6 text-zinc-300 font-bold italic tracking-wide uppercase text-sm">The software for the 1% is here.</span>
         </p>
         <div className="flex justify-center w-full">
-          <a href="/masterclass" className="inline-block border-2 border-red-600 bg-red-600/5 px-12 py-5 text-red-600 text-xs uppercase font-black tracking-[0.4em] hover:bg-red-600 hover:text-black transition-all duration-500 group relative">
+          <a href="/realityos" className="inline-block border-2 border-red-600 bg-red-600/5 px-12 py-5 text-red-600 text-xs uppercase font-black tracking-[0.4em] hover:bg-red-600 hover:text-black transition-all duration-500 group relative">
             <span className="relative z-10">[ VIEW_SYSTEM_REQUIREMENTS ]</span>
             <div className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
           </a>
@@ -200,6 +200,9 @@ export default function Home() {
           <a href="https://x.com/TheArchyHacker" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">
             [ X_STATION ]
           </a>
+          <a href="/terms" className="hover:text-red-600 transition-colors">
+  [ TERMS_AND_CONDITIONS ]
+</a>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 border-t border-zinc-900/50 pt-10 px-4">
           <div className="text-zinc-700 italic text-center md:text-left">
