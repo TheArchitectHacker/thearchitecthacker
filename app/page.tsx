@@ -160,7 +160,7 @@ export default function Home() {
           Start je herprogrammering vandaag.
         </p>
         <div className="flex justify-center w-full">
-          <a href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/ff8b778e-4424-444d-b3a2-12ec3fdd54c6" target="_blank" rel="noopener noreferrer" className="block w-full bg-red-600 text-black py-5 uppercase font-black tracking-[0.3em] hover:bg-white transition-all duration-300 text-center text-base shadow-[0_0_30px_rgba(220,38,38,0.4)]">
+          <a href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/47116d76-5057-49d2-ad18-f4ac538dfc63" target="_blank" rel="noopener noreferrer" className="block w-full bg-red-600 text-black py-5 uppercase font-black tracking-[0.3em] hover:bg-white transition-all duration-300 text-center text-base shadow-[0_0_30px_rgba(220,38,38,0.4)]">
             [ PURCHASE_ACCESS_€27 ]
           </a>
         </div>
