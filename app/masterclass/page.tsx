@@ -23,7 +23,7 @@ export default function Masterclass() {
       {/* HEADER HUD */}
       <nav className="w-full max-w-7xl flex justify-between items-center py-6 z-10 border-b border-zinc-900 mx-auto px-4">
         <a href="/" className="text-red-600 text-xs tracking-widest hover:text-white transition-colors group">
-          <span className="group-hover:translate-x-[-3px] inline-block transition-transform">←</span> [ EXIT_TO_MAIN_DASHBOARD ]
+          <span className="group-hover:-translate-x-0.75 inline-block transition-transform">←</span> [ EXIT_TO_MAIN_DASHBOARD ]
         </a>
         <div className="text-[10px] text-zinc-500 uppercase tracking-widest flex gap-4">
           <span className="animate-pulse text-red-900">● SYSTEM_LIVE</span>
@@ -47,7 +47,7 @@ export default function Masterclass() {
       {/* HERO SECTION */}
       <section className="max-w-4xl w-full pt-10 pb-20 z-10 text-center mx-auto px-4">
         <h3 className="text-red-600 text-[10px] tracking-[0.5em] mb-4 uppercase">Upgrade_Authorization_Required</h3>
-        <h1 className="text-5xl md:text-8xl font-black uppercase mb-8 tracking-tighter leading-[0.9] break-words">
+        <h1 className="text-5xl md:text-8xl font-black uppercase mb-8 tracking-tighter leading-[0.9] wrap-break-word">
           Reality <span className="text-red-600">OS</span>
         </h1>
         <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-light">
@@ -86,7 +86,7 @@ export default function Masterclass() {
                 { t: "Private Node Access", d: "Directe verbinding met de Architect en andere high-level infiltranten." }
               ].map((item, i) => (
                 <li key={i} className="flex gap-4 items-start">
-                  <span className="text-red-600 mt-1">[>]</span>
+                  <span className="text-red-600 mt-1">[{'>'}]</span>
                   <div>
                     <span className="block text-white font-bold uppercase text-xs">{item.t}</span>
                     <span className="text-zinc-500 text-sm">{item.d}</span>
