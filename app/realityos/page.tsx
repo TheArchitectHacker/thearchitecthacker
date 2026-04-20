@@ -3,14 +3,15 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function Masterclass() {
+// VERANDERD: Naam naar RealityOS
+export default function RealityOS() {
   return (
     <main className="bg-black text-white min-h-screen flex flex-col items-center px-6 font-mono relative overflow-hidden">
       
       {/* SCANLINES OVERLAY */}
       <div className="fixed inset-0 pointer-events-none z-50 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.02)_0px,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_3px)]"></div>
 
-      {/* BACKGROUND IMAGE - De 'Timeline Reprogram' visual */}
+      {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 opacity-10 grayscale brightness-50">
         <Image 
           src="/Reprogram_Timeline.jpeg" 
@@ -51,7 +52,7 @@ export default function Masterclass() {
           Reality <span className="text-red-600">OS</span>
         </h1>
         <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-          Stop met het consumeren van informatie. Start met het installeren van een nieuw besturingssysteem. De 8-weekse herprogrammering van je volledige realiteit.
+          Stop met het consumeren van informatie. Start met het installeren van een nieuw besturingssysteem. De volledige 8-module digitale herprogrammering van je realiteit.
         </p>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
@@ -65,25 +66,17 @@ export default function Masterclass() {
 
       {/* INTERFACE PREVIEW SECTION */}
       <section className="max-w-6xl w-full py-20 z-10 border-y border-zinc-900 bg-zinc-950/30 backdrop-blur-sm mx-auto px-4 relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none overflow-hidden">
-          <pre className="text-[8px] leading-none text-red-600">
-            {`0101010101010101010101010101
-              HACK_THE_SYSTEM_HACK_THE_SYSTEM
-              0101010101010101010101010101`}
-          </pre>
-        </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl font-black uppercase mb-6 tracking-tighter">De Cockpit voor je Nieuwe Leven</h2>
             <p className="text-zinc-500 mb-6 leading-relaxed">
-              RealityOS is geen cursus. Het is een beveiligd interactief dashboard waar je jouw dagelijkse output injecteert. De software analyseert je gedrag, spoort malware in je brein op en forceert je naar je gewenste tijdlijn.
+              RealityOS is een digitaal framework. Een interactief dashboard waar je jouw dagelijkse output analyseert. De software helpt je malware in je gedrag op te sporen en je focus te herstellen.
             </p>
             <ul className="space-y-4">
               {[
-                { t: "Interactieve HUD", d: "Monitor je System Integrity in real-time." },
-                { t: "Protocol Deployment", d: "Ontvang wekelijks nieuwe code om je financiële en mentale status te upgraden." },
-                { t: "Private Node Access", d: "Directe verbinding met de Architect en andere high-level infiltranten." }
+                { t: "Interactieve HUD", d: "Monitor je System Integrity via de digitale interface." },
+                { t: "Protocol Assets", d: "Download wekelijks nieuwe assets om je status te upgraden." },
+                { t: "Private Node Access", d: "Toegang tot de exclusieve Architect community." }
               ].map((item, i) => (
                 <li key={i} className="flex gap-4 items-start">
                   <span className="text-red-600 mt-1">[{'>'}]</span>
@@ -95,11 +88,10 @@ export default function Masterclass() {
               ))}
             </ul>
           </div>
-          <div className="relative aspect-square border-2 border-red-600/20 bg-black p-4 shadow-[0_0_50px_rgba(220,38,38,0.1)]">
-             {/* Hier komt later een screenshot of animatie van de software */}
-             <div className="w-full h-full border border-zinc-900 flex flex-col items-center justify-center text-zinc-800 italic text-[10px] uppercase tracking-widest text-center px-10">
-               <span className="animate-pulse mb-4 text-red-900">Visualizing_System_Interface...</span>
-               Het dashboard waar je jouw Portugese grond gaat veroveren.
+          <div className="relative aspect-square border-2 border-red-600/20 bg-black p-4 shadow-[0_0_50px_rgba(220,38,38,0.1)] flex items-center justify-center">
+             <div className="text-zinc-800 italic text-[10px] uppercase tracking-widest text-center px-10">
+               <span className="animate-pulse mb-4 text-red-900 block">Visualizing_System_Interface...</span>
+               The Dashboard for the 1%.
              </div>
           </div>
         </div>
@@ -109,31 +101,29 @@ export default function Masterclass() {
       <section className="max-w-xl w-full py-32 z-10 text-center mx-auto px-4">
         <div className="border-2 border-red-600 p-8 md:p-12 bg-red-950/5 relative">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-black px-4 py-1 text-[10px] font-black uppercase tracking-widest">
-            Early_Access_Offer
+            Deployment_Status: Soon
           </div>
           <h2 className="text-4xl font-black mb-2 uppercase">RealityOS v1.0</h2>
-          <div className="text-zinc-500 text-xs mb-8 uppercase tracking-widest italic">Full 8-Week Deployment + Lifetime License</div>
+          <div className="text-zinc-500 text-xs mb-8 uppercase tracking-widest italic text-center">Digital Framework + Lifetime License</div>
           
           <div className="text-5xl font-black text-white mb-8">
-            €497 <span className="text-zinc-700 text-sm line-through decoration-red-600">€1497</span>
+            €497
           </div>
 
-          <button className="w-full bg-red-600 hover:bg-white text-black py-5 font-black uppercase tracking-[0.3em] transition-all duration-300 mb-6">
-            Apply for License
+          {/* VERANDERD NAAR WAITLIST VOOR DE REVIEW */}
+          <button className="w-full border-2 border-red-600 text-red-600 py-5 font-black uppercase tracking-[0.3em] transition-all duration-300 mb-6">
+            Join the Waitlist
           </button>
           
-          <p className="text-[9px] text-zinc-600 uppercase tracking-widest leading-relaxed">
-            Let op: We accepteren slechts 20 Founding Architects voor de beta-fase. <br />
-            Status: <span className="text-red-900">14/20 Slots Remaining</span>
+          <p className="text-[9px] text-zinc-600 uppercase tracking-widest leading-relaxed text-center">
+            Status: <span className="text-red-900 italic">Security_Check_In_Progress</span>
           </p>
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="w-full max-w-7xl py-12 border-t border-zinc-900 text-center z-10 text-[8px] text-zinc-700 tracking-[0.5em] uppercase mx-auto px-4">
-        Reality_Operating_System // Developed by The Architect // Portugal_Division
+        Reality_Operating_System // Developed by The Architect
       </footer>
-
     </main>
   );
 }

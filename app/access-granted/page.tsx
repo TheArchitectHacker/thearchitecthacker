@@ -41,13 +41,13 @@ export default function AccessGranted() {
           <a 
             href="/The_Paradox_Shift_v1.pdf" 
             download
-            className="flex-1 bg-white text-black py-4 uppercase font-black tracking-widest hover:bg-red-600 hover:text-white transition-all text-xs"
+            className="flex-1 bg-white text-black py-4 uppercase font-black tracking-widest hover:bg-red-600 hover:text-white transition-all text-xs text-center"
           >
             [ DOWNLOAD_SOURCE_CODE ]
           </a>
           <a 
-            href="/masterclass"
-            className="flex-1 border border-red-600 text-red-600 py-4 uppercase font-black tracking-widest hover:bg-red-600 hover:text-black transition-all text-xs"
+            href="/realityos" // AANGEPAST: Geen masterclass meer
+            className="flex-1 border border-red-600 text-red-600 py-4 uppercase font-black tracking-widest hover:bg-red-600 hover:text-black transition-all text-xs text-center"
           >
             [ ENTER_REALITY_OS ]
           </a>
@@ -63,7 +63,7 @@ export default function AccessGranted() {
 
       {/* BOTTOM DECORATION */}
       <div className="mt-12 text-zinc-800 text-[8px] uppercase tracking-[1em] opacity-50">
-        Authorization_Key: {Math.random().toString(16).substr(2, 12).toUpperCase()}
+        Authorization_Key: {Math.random().toString(16).substring(2, 14).toUpperCase()}
       </div>
     </main>
   );
