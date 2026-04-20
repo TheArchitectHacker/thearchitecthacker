@@ -10,10 +10,10 @@ export default function Masterclass() {
       {/* SCANLINES OVERLAY */}
       <div className="fixed inset-0 pointer-events-none z-50 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.02)_0px,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_3px)]"></div>
 
-      {/* BACKGROUND IMAGE - Image_1: De ultieme transformatie */}
-      <div className="absolute inset-0 z-0 opacity-20 grayscale">
+      {/* BACKGROUND IMAGE - De 'Timeline Reprogram' visual */}
+      <div className="absolute inset-0 z-0 opacity-10 grayscale brightness-50">
         <Image 
-          src="/1000070634.png" 
+          src="/Reprogram_Timeline.jpeg" 
           alt="Timeline Reprogram Visual" 
           fill 
           className="object-cover" 
@@ -21,18 +21,19 @@ export default function Masterclass() {
       </div>
 
       {/* HEADER HUD */}
-      <nav className="w-full max-w-7xl flex justify-between items-center py-6 z-10 border-b border-zinc-900 mx-auto px-4 relative">
-        <a href="/" className="text-red-600 text-[10px] tracking-widest hover:text-white transition-colors group">
-          <span className="group-hover:translate-x-[-3px] inline-block transition-transform">←</span> [ BACK_TO_DASHBOARD ]
+      <nav className="w-full max-w-7xl flex justify-between items-center py-6 z-10 border-b border-zinc-900 mx-auto px-4">
+        <a href="/" className="text-red-600 text-xs tracking-widest hover:text-white transition-colors group">
+          <span className="group-hover:translate-x-[-3px] inline-block transition-transform">←</span> [ EXIT_TO_MAIN_DASHBOARD ]
         </a>
-        <div className="text-[10px] text-zinc-500 uppercase tracking-widest">
-          Status: Development_Mode // Node: Masterclass_V1
+        <div className="text-[10px] text-zinc-500 uppercase tracking-widest flex gap-4">
+          <span className="animate-pulse text-red-900">● SYSTEM_LIVE</span>
+          <span>Node: RealityOS_v1.0</span>
         </div>
       </nav>
 
-      {/* 1. HET LOGO */}
-      <section className="w-full max-w-7xl flex flex-col items-center pt-16 pb-12 z-10 mx-auto px-4 relative">
-        <div className="relative w-48 h-48 md:w-64 md:h-64 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+      {/* LOGO */}
+      <section className="w-full max-w-7xl flex flex-col items-center pt-12 pb-8 z-10 mx-auto px-4">
+        <div className="relative w-40 h-40 md:w-56 md:h-56 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">
           <Image 
             src="/The_Architect_Hacker_logo.png" 
             alt="The Architect Hacker Logo"
@@ -44,69 +45,93 @@ export default function Masterclass() {
       </section>
 
       {/* HERO SECTION */}
-      <section className="max-w-4xl w-full pt-10 pb-32 z-10 text-center mx-auto px-4 relative">
-        <div className="text-red-600 text-[10px] tracking-[0.6em] uppercase mb-4 animate-pulse">
-          Incoming_Transmission...
-        </div>
-        <h1 className="text-5xl md:text-7xl font-black uppercase mb-8 tracking-tighter leading-tight break-words">
-          The System <span className="text-red-600 font-outline-2">Overhaul.</span>
+      <section className="max-w-4xl w-full pt-10 pb-20 z-10 text-center mx-auto px-4">
+        <h3 className="text-red-600 text-[10px] tracking-[0.5em] mb-4 uppercase">Upgrade_Authorization_Required</h3>
+        <h1 className="text-5xl md:text-8xl font-black uppercase mb-8 tracking-tighter leading-[0.9] break-words">
+          Reality <span className="text-red-600">OS</span>
         </h1>
-        <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 italic">
-          "Dit is geen cursus. Dit is de volledige herprogrammering van je werkelijkheid. 8 weken om je maatschappelijke scripts te verwijderen en je eigen architectuur te bouwen."
+        <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-light">
+          Stop met het consumeren van informatie. Start met het installeren van een nieuw besturingssysteem. De 8-weekse herprogrammering van je volledige realiteit.
         </p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
+          {['CORE_KERNEL', 'BIO_OVERRIDE', 'TIME_EDITOR', 'NET_INFILTR'].map((tag) => (
+            <div key={tag} className="border border-zinc-800 py-2 text-[9px] text-zinc-600 tracking-widest uppercase">
+              {tag}: <span className="text-green-900">READY</span>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* CURRICULUM SECTION */}
-      <section className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 py-20 z-10 border-t border-zinc-900 mx-auto px-4 relative bg-black/40 backdrop-blur-sm">
-        <div className="space-y-12">
-          <h2 className="text-3xl font-bold uppercase tracking-tighter border-l-4 border-red-600 pl-6 text-white">The_Blueprint</h2>
-          
-          <div className="space-y-8 font-mono">
-            {[
-              { phase: "Phase 01", title: "Mental Firewall", desc: "Identificeer en elimineer de angst-protocollen die je groei blokkeren." },
-              { phase: "Phase 02", title: "Dopamine Reset", desc: "Krijg volledige controle over je focus en verbreek de verslaving aan goedkope stimulatie." },
-              { phase: "Phase 03", title: "Reality Architecture", desc: "Bouw systemen en workflows die rijkdom en vrijheid aantrekken." },
-              { phase: "Phase 04", title: "Timeline Mastery", desc: "Leer hoe je beslissingen maakt vanuit je toekomstige zelf." }
-            ].map((item, i) => (
-              <div key={i} className="group border-b border-zinc-900 pb-6 hover:border-red-600/30 transition-colors">
-                <span className="text-red-600 text-xs font-bold uppercase tracking-widest">{item.phase}</span>
-                <h3 className="text-xl font-bold uppercase mt-1 group-hover:text-red-600 transition-colors">{item.title}</h3>
-                <p className="text-zinc-500 text-sm mt-2">{item.desc}</p>
-              </div>
-            ))}
+      {/* INTERFACE PREVIEW SECTION */}
+      <section className="max-w-6xl w-full py-20 z-10 border-y border-zinc-900 bg-zinc-950/30 backdrop-blur-sm mx-auto px-4 relative">
+        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none overflow-hidden">
+          <pre className="text-[8px] leading-none text-red-600">
+            {`0101010101010101010101010101
+              HACK_THE_SYSTEM_HACK_THE_SYSTEM
+              0101010101010101010101010101`}
+          </pre>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-black uppercase mb-6 tracking-tighter">De Cockpit voor je Nieuwe Leven</h2>
+            <p className="text-zinc-500 mb-6 leading-relaxed">
+              RealityOS is geen cursus. Het is een beveiligd interactief dashboard waar je jouw dagelijkse output injecteert. De software analyseert je gedrag, spoort malware in je brein op en forceert je naar je gewenste tijdlijn.
+            </p>
+            <ul className="space-y-4">
+              {[
+                { t: "Interactieve HUD", d: "Monitor je System Integrity in real-time." },
+                { t: "Protocol Deployment", d: "Ontvang wekelijks nieuwe code om je financiële en mentale status te upgraden." },
+                { t: "Private Node Access", d: "Directe verbinding met de Architect en andere high-level infiltranten." }
+              ].map((item, i) => (
+                <li key={i} className="flex gap-4 items-start">
+                  <span className="text-red-600 mt-1">[>]</span>
+                  <div>
+                    <span className="block text-white font-bold uppercase text-xs">{item.t}</span>
+                    <span className="text-zinc-500 text-sm">{item.d}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative aspect-square border-2 border-red-600/20 bg-black p-4 shadow-[0_0_50px_rgba(220,38,38,0.1)]">
+             {/* Hier komt later een screenshot of animatie van de software */}
+             <div className="w-full h-full border border-zinc-900 flex flex-col items-center justify-center text-zinc-800 italic text-[10px] uppercase tracking-widest text-center px-10">
+               <span className="animate-pulse mb-4 text-red-900">Visualizing_System_Interface...</span>
+               Het dashboard waar je jouw Portugese grond gaat veroveren.
+             </div>
           </div>
         </div>
+      </section>
 
-        {/* WAITLIST CARD */}
-        <div className="bg-zinc-950 border border-red-600/20 p-8 md:p-12 flex flex-col justify-center relative shadow-[0_0_50px_rgba(220,38,38,0.05)] h-fit sticky top-10">
-          <div className="absolute top-4 right-4 text-[8px] text-red-900 font-bold tracking-widest">STRICTLY_LIMITED</div>
-          <h3 className="text-2xl font-black uppercase mb-6 tracking-tighter text-red-600">Access Restricted</h3>
-          <p className="text-zinc-400 text-sm mb-8 leading-relaxed font-mono">
-            De Masterclass wordt momenteel geassembleerd. Er worden slechts 50 'Architects' toegelaten tot het eerste cohort om maximale begeleiding te garanderen.
-          </p>
+      {/* PRICING / ACCESS */}
+      <section className="max-w-xl w-full py-32 z-10 text-center mx-auto px-4">
+        <div className="border-2 border-red-600 p-8 md:p-12 bg-red-950/5 relative">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-black px-4 py-1 text-[10px] font-black uppercase tracking-widest">
+            Early_Access_Offer
+          </div>
+          <h2 className="text-4xl font-black mb-2 uppercase">RealityOS v1.0</h2>
+          <div className="text-zinc-500 text-xs mb-8 uppercase tracking-widest italic">Full 8-Week Deployment + Lifetime License</div>
           
-          <ul className="text-[10px] space-y-3 mb-10 text-zinc-500 uppercase font-mono tracking-widest">
-            <li className="flex items-center gap-2"> <span className="w-1 h-1 bg-red-600"></span> 8 Weeks of intensive coaching</li>
-            <li className="flex items-center gap-2"> <span className="w-1 h-1 bg-red-600"></span> Private Discord Infiltration</li>
-            <li className="flex items-center gap-2"> <span className="w-1 h-1 bg-red-600"></span> Weekly Live Transmissions</li>
-          </ul>
+          <div className="text-5xl font-black text-white mb-8">
+            €497 <span className="text-zinc-700 text-sm line-through decoration-red-600">€1497</span>
+          </div>
 
-          {/* WAITLIST BUTTON - Je kunt hier een mailto link of een Lemon Squeezy Free Product link plaatsen */}
-          <a
-            href="mailto:architect@thearchitecthacker.com?subject=Masterclass Waitlist Request"
-            className="w-full bg-red-600 text-black py-4 font-black uppercase tracking-widest hover:bg-white hover:scale-[1.02] transition-all text-center shadow-[0_0_20px_rgba(220,38,38,0.3)]"
-          >
-            [ JOIN_THE_WAITLIST ]
-          </a>
-          <p className="text-[8px] text-zinc-700 mt-4 text-center uppercase tracking-widest">
-            You will be notified when enrollment opens.
+          <button className="w-full bg-red-600 hover:bg-white text-black py-5 font-black uppercase tracking-[0.3em] transition-all duration-300 mb-6">
+            Apply for License
+          </button>
+          
+          <p className="text-[9px] text-zinc-600 uppercase tracking-widest leading-relaxed">
+            Let op: We accepteren slechts 20 Founding Architects voor de beta-fase. <br />
+            Status: <span className="text-red-900">14/20 Slots Remaining</span>
           </p>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="w-full max-w-7xl py-20 mt-20 border-t border-zinc-900 text-center z-10 text-[10px] text-zinc-700 tracking-[0.5em] uppercase mx-auto px-4 relative">
-        Authorization Required // No Trespassing // © {new Date().getFullYear()} The Architect Hacker
+      <footer className="w-full max-w-7xl py-12 border-t border-zinc-900 text-center z-10 text-[8px] text-zinc-700 tracking-[0.5em] uppercase mx-auto px-4">
+        Reality_Operating_System // Developed by The Architect // Portugal_Division
       </footer>
 
     </main>
