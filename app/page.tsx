@@ -23,13 +23,19 @@ export default function Home() {
       {/* SCANLINES OVERLAY */}
       <div className="fixed inset-0 pointer-events-none z-50 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.02)_0px,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_3px)]"></div>
 
-      {/* HUD OVERLAY */}
-      <div className="fixed top-4 left-4 text-[10px] text-red-600 opacity-60 uppercase tracking-[0.2em] z-50 pointer-events-none flex flex-col gap-1">
+      {/* HUD OVERLAY - Linkt nu naar het SaaS domein */}
+      <div className="fixed top-4 left-4 text-[10px] text-red-600 opacity-60 uppercase tracking-[0.2em] z-50 flex flex-col gap-2">
         <div>Protocol: Shadow_Architect</div>
         <div className="flex gap-2 items-center">
           <span className="w-2 h-2 bg-red-600 animate-pulse rounded-full"></span>
           <span>Status: System_Infiltration_Active</span>
         </div>
+        <a 
+          href="https://getrootos.com/login" 
+          className="mt-2 text-zinc-400 hover:text-red-600 transition-colors pointer-events-auto bg-black/40 p-1 border border-zinc-900"
+        >
+          [ TERMINAL_ACCESS ]
+        </a>
       </div>
 
       {/* 1. LOGO */}
@@ -114,12 +120,12 @@ export default function Home() {
               <span className="text-[9px] text-zinc-700 font-mono uppercase italic tracking-tighter">Verified_Source</span>
             </div>
             <span className="text-[10px] text-zinc-300 block font-black uppercase tracking-widest italic leading-relaxed">
-              Includes: <span className="text-white underline decoration-red-600 underline-offset-4 tracking-tighter">RealityOS_Alpha_Key</span>
+              Includes: <span className="text-white underline decoration-red-600 underline-offset-4 tracking-tighter">RootOS_Alpha_Key</span>
             </span>
           </div>
         </div>
         
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 text-left">
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-[0.9]">
             The Paradox <br /><span className="text-red-600">Shift</span>
           </h2>
@@ -129,9 +135,9 @@ export default function Home() {
               "De-installeer de 12 'Social Malware' scripts.",
               "Reality Scanning: Leer de patronen van het systeem zien.",
               "Timeline Jumping: Forceer beslissingen vanuit je doel.",
-              "Access Key: Activeer je RealityOS Dashboard login."
+              "Access Key: Activeer je RootOS Dashboard login."
             ].map((point, i) => (
-              <li key={i} className="flex items-center gap-4 group">
+              <li key={i} className="flex items-center gap-4 group text-left">
                 <span className="w-2 h-2 bg-red-600 rotate-45 group-hover:scale-150 transition-transform duration-300"></span>
                 <span className="group-hover:text-white transition-colors">{point}</span>
               </li>
@@ -156,11 +162,16 @@ export default function Home() {
           Initial_Payload:<br />The_Source_Code
         </h2>
         <p className="text-zinc-400 mb-10 italic text-sm leading-relaxed">
-          Krijg de blauwdruk en je eerste <span className="text-white font-bold underline decoration-red-600">Access Key</span> voor het RealityOS Dashboard. <br />
+          Krijg de blauwdruk en je eerste <span className="text-white font-bold underline decoration-red-600">Access Key</span> voor het RootOS Dashboard. <br />
           Start je herprogrammering vandaag.
         </p>
         <div className="flex justify-center w-full">
-          <a href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/47116d76-5057-49d2-ad18-f4ac538dfc63" target="_blank" rel="noopener noreferrer" className="block w-full bg-red-600 text-black py-5 uppercase font-black tracking-[0.3em] hover:bg-white transition-all duration-300 text-center text-base shadow-[0_0_30px_rgba(220,38,38,0.4)]">
+          <a 
+            href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/47116d76-5057-49d2-ad18-f4ac538dfc63" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="block w-full bg-red-600 text-black py-5 uppercase font-black tracking-[0.3em] hover:bg-white transition-all duration-300 text-center text-base shadow-[0_0_30px_rgba(220,38,38,0.4)]"
+          >
             [ PURCHASE_ACCESS_€27 ]
           </a>
         </div>
@@ -174,14 +185,14 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-red-600/50 to-transparent"></div>
         <h3 className="text-red-600 text-[10px] tracking-[0.4em] mb-4 uppercase font-bold text-center w-full">Hardware_Upgrade_Detected</h3>
         <h2 className="text-4xl md:text-6xl font-black uppercase mb-8 tracking-tighter">
-          Reality<span className="text-red-600">OS</span> v1.0
+          Root<span className="text-red-600">OS</span> v1.0
         </h2>
         <p className="text-zinc-500 text-base max-w-2xl mx-auto mb-12 font-mono leading-relaxed text-center">
-          Stop met het verzamelen van nutteloze data. Installeer de volledige interface om je gedrag te debuggen en je tijdlijn te forceren naar 6ha Portugese grond.
+          Stop met het verzamelen van nutteloze data. Installeer de volledige interface om je gedrag te debuggen en je tijdlijn te forceren.
           <span className="block mt-6 text-zinc-300 font-bold italic tracking-wide uppercase text-sm">The software for the 1% is here.</span>
         </p>
         <div className="flex justify-center w-full">
-          <a href="/realityos" className="inline-block border-2 border-red-600 bg-red-600/5 px-12 py-5 text-red-600 text-xs uppercase font-black tracking-[0.4em] hover:bg-red-600 hover:text-black transition-all duration-500 group relative">
+          <a href="https://getrootos.com" className="inline-block border-2 border-red-600 bg-red-600/5 px-12 py-5 text-red-600 text-xs uppercase font-black tracking-[0.4em] hover:bg-red-600 hover:text-black transition-all duration-500 group relative">
             <span className="relative z-10">[ VIEW_SYSTEM_REQUIREMENTS ]</span>
             <div className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
           </a>
@@ -201,8 +212,8 @@ export default function Home() {
             [ X_STATION ]
           </a>
           <a href="/terms" className="hover:text-red-600 transition-colors">
-  [ TERMS_AND_CONDITIONS ]
-</a>
+            [ TERMS_AND_CONDITIONS ]
+          </a>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 border-t border-zinc-900/50 pt-10 px-4">
           <div className="text-zinc-700 italic text-center md:text-left">
