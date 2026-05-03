@@ -1,13 +1,17 @@
-// app/screening/page.tsx
-
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { createBrowserClient } from "@supabase/ssr";
 
 // --- Typewriter Helper Component ---
 const Typewriter = ({ text, onComplete, speed = 30 }: { text: string, onComplete?: () => void, speed?: number }) => {
   const [displayedText, setDisplayedText] = useState("");
+  const onCompleteRef = useRef(onComplete);
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     setDisplayedText("");
@@ -17,11 +21,11 @@ const Typewriter = ({ text, onComplete, speed = 30 }: { text: string, onComplete
       i++;
       if (i >= text.length) {
         clearInterval(interval);
-        if (onComplete) onComplete();
+        if (onCompleteRef.current) onCompleteRef.current();
       }
     }, speed);
     return () => clearInterval(interval);
-  }, [text, speed, onComplete]);
+  }, [text, speed]);
 
   return <span>{displayedText}<span className="animate-pulse bg-red-600 inline-block w-2 h-4 ml-1 align-middle"></span></span>;
 };
@@ -29,13 +33,21 @@ const Typewriter = ({ text, onComplete, speed = 30 }: { text: string, onComplete
 // --- Main Component ---
 export default function OperatorScreening() {
   const router = useRouter();
+  
+  // Initialiseer Supabase
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+
   const [step, setStep] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     q1_focus: "",
     q2_timing: "",
     q3_commitment: "",
-    q3_doubt_reason: "", // Voor de "twijfel" of "nee" flow
+    q3_doubt_reason: "",
     q4_resistance: "",
     q5_contingency: "",
     q6_expectation: "",
@@ -47,6 +59,36 @@ export default function OperatorScreening() {
     if (isTyping) return;
     setIsTyping(true);
     setStep(prev => prev + 1);
+  };
+
+  // --- De Data Transmissie naar de Kluis ---
+  const submitApplication = async () => {
+    setIsSubmitting(true);
+    
+    const { error } = await supabase
+      .from('screening_applications')
+      .insert([
+        {
+          q1_focus: formData.q1_focus,
+          q2_timing: formData.q2_timing,
+          q3_commitment: formData.q3_commitment,
+          q3_doubt_reason: formData.q3_doubt_reason,
+          q4_resistance: formData.q4_resistance,
+          q5_contingency: formData.q5_contingency,
+          q6_expectation: formData.q6_expectation,
+        }
+      ]);
+
+    setIsSubmitting(false);
+
+    if (error) {
+      console.error("System Error during transmission:", error);
+      alert("Er ging iets mis met de verbinding met de core. Probeer het opnieuw.");
+      return;
+    }
+
+    // Succes! Ga naar het eindscherm
+    nextStep();
   };
 
   // --- RENDERING VAN DE STAPPEN ---
@@ -87,7 +129,7 @@ export default function OperatorScreening() {
               <div className="space-y-4 animate-in slide-in-from-bottom-4 duration-500">
                 <textarea 
                   autoFocus
-                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-[100px] resize-none"
+                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-25 resize-none"
                   placeholder="Typ je target hier..."
                   value={formData.q1_focus}
                   onChange={(e) => updateForm("q1_focus", e.target.value)}
@@ -110,7 +152,7 @@ export default function OperatorScreening() {
               <div className="space-y-4 animate-in slide-in-from-bottom-4 duration-500">
                 <textarea 
                   autoFocus
-                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-[100px] resize-none"
+                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-25 resize-none"
                   placeholder="Definieer je motivatie..."
                   value={formData.q2_timing}
                   onChange={(e) => updateForm("q2_timing", e.target.value)}
@@ -123,7 +165,7 @@ export default function OperatorScreening() {
           </div>
         )}
 
-        {/* STEP 3: COMMITMENT (MULTIPLE CHOICE + LOGIC) */}
+        {/* STEP 3: COMMITMENT */}
         {step === 3 && (
           <div className="space-y-6 animate-in fade-in duration-500">
             <p className="text-sm uppercase text-white font-bold leading-relaxed">
@@ -132,7 +174,6 @@ export default function OperatorScreening() {
             
             {!isTyping && (
               <div className="space-y-3 animate-in slide-in-from-bottom-4 duration-500">
-                {/* Option 1: Yes */}
                 <button 
                   onClick={() => { updateForm("q3_commitment", "Yes"); nextStep(); }}
                   className="w-full text-left border border-zinc-800 p-4 hover:border-red-600 hover:bg-red-950/20 text-zinc-300 text-sm uppercase transition-all"
@@ -140,7 +181,6 @@ export default function OperatorScreening() {
                   [ ] Ja, ik commit hier volledig aan.
                 </button>
                 
-                {/* Option 2: Doubt */}
                 <button 
                   onClick={() => updateForm("q3_commitment", "Doubt")}
                   className={`w-full text-left border ${formData.q3_commitment === "Doubt" ? "border-red-600 bg-red-950/20" : "border-zinc-800"} p-4 text-zinc-300 text-sm uppercase transition-all`}
@@ -148,7 +188,6 @@ export default function OperatorScreening() {
                   [ ] Ik wil het proberen, maar ik heb twijfels.
                 </button>
 
-                {/* Option 3: No */}
                 <button 
                   onClick={() => updateForm("q3_commitment", "No")}
                   className={`w-full text-left border ${formData.q3_commitment === "No" ? "border-red-600 bg-red-950/20" : "border-zinc-800"} p-4 text-zinc-300 text-sm uppercase transition-all`}
@@ -156,13 +195,12 @@ export default function OperatorScreening() {
                   [ ] Nee.
                 </button>
 
-                {/* CONDITIONAL: DOUBT */}
                 {formData.q3_commitment === "Doubt" && (
                   <div className="pt-4 space-y-4 animate-in fade-in slide-in-from-top-4">
                      <p className="text-red-500 text-xs uppercase font-bold italic">&gt; Systeem waarschuwing: Twijfel is een Echo. Waaraan twijfel je exact?</p>
                      <textarea 
                         autoFocus
-                        className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-[80px]"
+                        className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-20"
                         placeholder="Log je twijfel..."
                         value={formData.q3_doubt_reason}
                         onChange={(e) => updateForm("q3_doubt_reason", e.target.value)}
@@ -173,13 +211,12 @@ export default function OperatorScreening() {
                   </div>
                 )}
 
-                {/* CONDITIONAL: NO */}
                 {formData.q3_commitment === "No" && (
                   <div className="pt-4 space-y-4 animate-in fade-in slide-in-from-top-4">
                      <p className="text-red-500 text-xs uppercase font-bold italic">&gt; Systeem diagnose: Je verdedigt de Matrix. Waarom weiger je de regie over je eigen render te nemen?</p>
                      <textarea 
                         autoFocus
-                        className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-[80px]"
+                        className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-20"
                         placeholder="Verklaar je weerstand..."
                         value={formData.q3_doubt_reason}
                         onChange={(e) => updateForm("q3_doubt_reason", e.target.value)}
@@ -204,7 +241,7 @@ export default function OperatorScreening() {
               <div className="space-y-4 animate-in slide-in-from-bottom-4 duration-500">
                 <textarea 
                   autoFocus
-                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-[100px] resize-none"
+                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-25 resize-none"
                   placeholder="Log je firewall strategie..."
                   value={formData.q4_resistance}
                   onChange={(e) => updateForm("q4_resistance", e.target.value)}
@@ -217,7 +254,7 @@ export default function OperatorScreening() {
           </div>
         )}
 
-        {/* STEP 5: CONTINGENCY (RADIO BUTTONS) */}
+        {/* STEP 5: CONTINGENCY */}
         {step === 5 && (
           <div className="space-y-6 animate-in fade-in duration-500">
             <p className="text-sm uppercase text-white font-bold leading-relaxed">
@@ -258,7 +295,7 @@ export default function OperatorScreening() {
               <div className="space-y-6 animate-in slide-in-from-bottom-4 duration-500">
                 <textarea 
                   autoFocus
-                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-[120px] resize-none"
+                  className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white text-sm focus:border-red-900 focus:outline-none min-h-30 resize-none"
                   placeholder="Final statement..."
                   value={formData.q6_expectation}
                   onChange={(e) => updateForm("q6_expectation", e.target.value)}
@@ -266,10 +303,11 @@ export default function OperatorScreening() {
                 
                 {formData.q6_expectation.length > 5 && (
                   <button 
-                    onClick={nextStep} 
-                    className="w-full bg-red-900 text-white px-8 py-5 text-xs font-black uppercase tracking-[0.5em] hover:bg-red-700 transition-all shadow-[0_0_40px_rgba(153,27,27,0.3)] active:scale-95"
+                    onClick={submitApplication} 
+                    disabled={isSubmitting}
+                    className="w-full bg-red-900 text-white px-8 py-5 text-xs font-black uppercase tracking-[0.5em] hover:bg-red-700 transition-all shadow-[0_0_40px_rgba(153,27,27,0.3)] disabled:opacity-50 active:scale-95"
                   >
-                    &gt; VERSTUUR AANVRAAG
+                    {isSubmitting ? "> TRANSMITTING DATA..." : "> VERSTUUR AANVRAAG"}
                   </button>
                 )}
               </div>
@@ -277,7 +315,7 @@ export default function OperatorScreening() {
           </div>
         )}
 
-        {/* STEP 7: SUCCESS / PROCESSING */}
+        {/* STEP 7: SUCCESS */}
         {step === 7 && (
           <div className="text-center space-y-8 animate-in zoom-in duration-700 pt-12">
             <div className="inline-block border-2 border-red-900 p-8 bg-red-950/20">
@@ -288,7 +326,6 @@ export default function OperatorScreening() {
                  <p className="text-white mt-6 block">Bedankt voor je eerlijkheid.</p>
                </div>
             </div>
-            {/* Hier zou je eventueel de data naar je database (Supabase) sturen met een useEffect */}
           </div>
         )}
 
