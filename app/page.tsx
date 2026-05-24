@@ -120,7 +120,7 @@ export default function Home() {
             </div>
             <div>
               <div className="text-2xl font-mono text-white mb-6">€49 <span className="text-[10px] text-zinc-500">/ month</span></div>
-              <a href="https://getrootos.com" className="block text-center bg-red-600 text-black py-3 text-[10px] font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all">
+              <a href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/abba2528-cfdf-42a4-bc76-67129b1022e0" className="block text-center bg-red-600 text-black py-3 text-[10px] font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all">
                 Initialize_Deployment
               </a>
             </div>
@@ -137,8 +137,8 @@ export default function Home() {
             </div>
             <div>
               <div className="text-2xl font-mono text-white mb-6">€2.500</div>
-              <a href="/screening" className="block text-center border-2 border-red-600 py-3 text-[10px] font-black uppercase tracking-widest text-red-600 hover:bg-red-600 hover:text-black transition-all">
-                Apply_For_Screening
+              <a href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/0e2f4312-9194-48ff-85f3-50748e232ecd" className="block text-center border-2 border-red-600 py-3 text-[10px] font-black uppercase tracking-widest text-red-600 hover:bg-red-600 hover:text-black transition-all">
+                Engage_Integration
               </a>
             </div>
           </div>
