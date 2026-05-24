@@ -67,7 +67,7 @@ export default function AccessGranted() {
                     Download de volledige broncode van de simulatie. Bestudeer de patronen voordat je de terminal betreedt.
                 </p>
                 <a 
-                  href="/downloads/The_Paradox_Shift.pdf" 
+                  href="/downloads/The_Paradox_Shift-v2.pdf" 
                   download 
                   className="inline-block w-full border border-zinc-700 text-zinc-300 px-6 py-4 uppercase tracking-[0.2em] text-[10px] font-black hover:bg-white hover:text-black transition-all text-center"
                 >

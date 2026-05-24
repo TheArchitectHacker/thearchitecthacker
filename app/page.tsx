@@ -23,7 +23,7 @@ export default function Home() {
       {/* SCANLINES OVERLAY */}
       <div className="fixed inset-0 pointer-events-none z-50 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.02)_0px,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_3px)]"></div>
 
-      {/* HUD OVERLAY - Linkt nu naar het SaaS domein */}
+      {/* HUD OVERLAY */}
       <div className="fixed top-4 left-4 text-[10px] text-red-600 opacity-60 uppercase tracking-[0.2em] z-50 flex flex-col gap-2">
         <div>Protocol: Shadow_Architect</div>
         <div className="flex gap-2 items-center">
@@ -38,29 +38,31 @@ export default function Home() {
         </a>
       </div>
 
-      {/* 1. LOGO */}
-      <section className="w-full max-w-7xl flex flex-col items-center pt-16 pb-12 z-10 mx-auto">
-        <div className="relative w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_0_25px_rgba(220,38,38,0.4)]">
-          <Image 
-            src="/The_Architect_Hacker_logo.png" 
-            alt="The Architect Hacker Logo"
-            fill 
-            priority 
-            className="object-contain" 
-          />
-        </div>
+      {/* 1. LOGO SECTION */}
+      <section className="w-full max-w-7xl flex flex-col items-center pt-16 pb-12 z-10 mx-auto text-center">
+         <div className="relative w-48 h-48 md:w-64 md:h-64 mb-4 opacity-80">
+            <div className="absolute inset-0 border-2 border-red-600/20 rounded-full animate-ping"></div>
+            <Image 
+              src="/The_Architect_Hacker_logo.png" 
+              alt="The Architect Hacker Logo"
+              fill 
+              priority 
+              className="object-contain" 
+            />
+         </div>
+         <p className="text-red-600 text-[10px] tracking-[0.8em] uppercase font-black">Operator_ID: 000.000.1</p>
       </section>
 
-      {/* 2. HERO */}
-      <section className="text-center max-w-4xl z-10 py-10 mx-auto text-white">
-        <h3 className="text-red-600 text-[10px] tracking-[0.5em] mb-6 uppercase font-bold text-center w-full">Unmasking_The_Simulated_Reality</h3>
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 uppercase leading-[0.85]">
-          Stop <span className="text-red-600">Existing.</span><br />
-          Start Architecting.
+      {/* 2. HERO SECTION */}
+      <section className="text-center max-w-5xl z-10 py-10 mx-auto text-white">
+        <h3 className="text-red-600 text-[10px] tracking-[0.5em] mb-6 uppercase font-bold">Unmasking_The_Simulated_Reality</h3>
+        <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-8 uppercase leading-[0.85]">
+          STOP <span className="text-red-600">EXISTING.</span><br />
+          START ARCHITECTING.
         </h1>
-        <p className="text-zinc-500 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed italic text-center">
-          Je brein draait op malware die is ontworpen om je klein te houden. <br />
-          Het is tijd om de root-toegang tot je eigen realiteit op te eisen.
+        <p className="text-zinc-500 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed italic">
+          Your brain is running on malware designed to keep you small. <br />
+          It is time to reclaim the root access to your own reality.
         </p>
         <div className="flex justify-center w-full">
           <a href="#offer" className="inline-block bg-red-600 text-black px-12 py-5 uppercase font-black tracking-[0.3em] hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(220,38,38,0.5)]">
@@ -80,17 +82,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. ANALYSIS */}
-      <section className="max-w-5xl w-full mt-40 px-4 z-10 mx-auto">
+      {/* 4. THE HIERARCHY (OFFERS) */}
+      <section id="offer" className="max-w-6xl w-full mt-40 px-4 z-10 mx-auto">
         <div className="flex flex-col items-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 text-center">Threat_Analysis</h2>
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 text-center">System_Hierarchy</h2>
+          <div className="h-1 w-24 bg-red-600"></div>
+          <p className="mt-6 text-zinc-500 text-xs uppercase tracking-widest">Select Access Level</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-zinc-900 overflow-hidden">
+          {/* LEVEL 01 - THE ARCHIVE */}
+          <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-900 bg-black hover:bg-zinc-950 transition-all flex flex-col justify-between group">
+            <div>
+              <span className="text-red-600 font-black text-[10px] tracking-widest group-hover:animate-pulse">[ ACCESS_LEVEL_01 ]</span>
+              <h3 className="text-2xl font-black mt-4 mb-4 uppercase">The Archive</h3>
+              <p className="text-zinc-500 text-xs leading-relaxed mb-8">
+                Uninstall the 12 'Social Malware' scripts. The foundation of the Paradox Shift and your first step toward system autonomy.
+              </p>
+            </div>
+            <div>
+              <div className="text-2xl font-mono text-white mb-6">€27</div>
+              <a href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/47116d76-5057-49d2-ad18-f4ac538dfc63" className="block text-center border border-zinc-800 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                Download_Source_Code
+              </a>
+            </div>
+          </div>
+          
+          {/* LEVEL 02 - ROOT_OS (FSD) */}
+          <div className="p-10 border-b md:border-b-0 md:border-r border-red-900/30 bg-red-950/5 hover:bg-red-950/10 transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div className="absolute top-0 right-0 bg-red-600 text-black text-[8px] font-black px-2 py-1 uppercase tracking-tighter">Recommended</div>
+            <div>
+              <span className="text-red-600 font-black text-[10px] tracking-widest group-hover:animate-pulse">[ ACCESS_LEVEL_02 ]</span>
+              <h3 className="text-2xl font-black mt-4 mb-4 uppercase text-white">Full System Deployment</h3>
+              <p className="text-zinc-400 text-xs leading-relaxed mb-8 italic">
+                The 168-Hour Loop. Use the interactive dashboard to debug your daily behavior and force your timeline.
+              </p>
+            </div>
+            <div>
+              <div className="text-2xl font-mono text-white mb-6">€49 <span className="text-[10px] text-zinc-500">/ month</span></div>
+              <a href="https://getrootos.com" className="block text-center bg-red-600 text-black py-3 text-[10px] font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all">
+                Initialize_Deployment
+              </a>
+            </div>
+          </div>
+
+          {/* LEVEL 03 - AAI INTEGRATION */}
+          <div className="p-10 bg-zinc-900/20 hover:bg-zinc-900/40 transition-all flex flex-col justify-between relative group border-t md:border-t-0 border-zinc-900">
+            <div>
+              <span className="text-red-600 font-black text-[10px] tracking-widest group-hover:animate-pulse">[ ACCESS_LEVEL_03 ]</span>
+              <h3 className="text-2xl font-black mt-4 mb-4 uppercase">AAI Integration</h3>
+              <p className="text-zinc-500 text-xs leading-relaxed mb-8">
+                Direct neural sync with the Architect. Personal intervention to destroy your legacy malware. By invitation only.
+              </p>
+            </div>
+            <div>
+              <div className="text-2xl font-mono text-white mb-6">€2.500</div>
+              <a href="/screening" className="block text-center border-2 border-red-600 py-3 text-[10px] font-black uppercase tracking-widest text-red-600 hover:bg-red-600 hover:text-black transition-all">
+                Apply_For_Screening
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. THREAT ANALYSIS SECTION */}
+      <section className="max-w-5xl w-full mt-48 px-4 z-10 mx-auto">
+        <div className="flex flex-col items-center mb-16 text-center">
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">Threat_Analysis</h2>
           <div className="h-1 w-24 bg-red-600"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           {[
-            { title: "The 9-5 Script", desc: "Een kunstmatige tijdlus ontworpen om je energie te oogsten in ruil voor minimale overleving." },
-            { title: "Dopamine Malware", desc: "Sociale algoritmes die je focus fragmenteren zodat je nooit de architectuur van je gevangenis ziet." },
-            { title: "Reality Stagnation", desc: "De angst om te falen is een geprogrammeerde firewall die je tegenhoudt om je tijdlijn te switchen." }
+            { title: "The 9-5 Script", desc: "An artificial time loop designed to harvest your energy in exchange for minimal survival." },
+            { title: "Dopamine Malware", desc: "Social algorithms that fragment your focus so you never see the architecture of your prison." },
+            { title: "Reality Stagnation", desc: "The fear of failure is a programmed firewall preventing you from switching your timeline." }
           ].map((item, index) => (
             <div key={index} className="border border-zinc-900 p-8 bg-zinc-950/40 hover:border-red-600/50 transition-all group relative">
               <div className="text-red-900 absolute top-4 right-6 text-4xl font-black opacity-20 italic">0{index + 1}</div>
@@ -101,122 +166,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. SOURCE CODE VISUAL */}
-      <section className="max-w-6xl w-full mt-48 flex flex-col lg:flex-row items-center gap-16 px-4 z-10 mx-auto">
-        <div className="w-full lg:w-1/2 group relative flex flex-col items-center">
-          <div className="absolute inset-0 bg-red-600 opacity-10 blur-[100px] pointer-events-none group-hover:opacity-20 transition-opacity"></div>
-          <div className="w-full h-auto max-w-125 border border-zinc-900 shadow-2xl overflow-hidden group-hover:border-red-600/50 transition-colors duration-500 bg-zinc-900">
-            <Image 
-              src="/Paradox_Shift.jpeg" 
-              alt="The Paradox Shift E-book Cover"
-              width={1000} 
-              height={1400} 
-              className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out"
-            />
-          </div>
-          <div className="mt-6 w-full max-w-125 bg-zinc-950/90 p-4 border-l-2 border-red-600 backdrop-blur-md text-left z-10">
-            <div className="flex justify-between items-center mb-1">
-              <span className="text-[10px] text-red-600 font-black tracking-widest uppercase">File_Type: Source_Code.pdf</span>
-              <span className="text-[9px] text-zinc-700 font-mono uppercase italic tracking-tighter">Verified_Source</span>
-            </div>
-            <span className="text-[10px] text-zinc-300 block font-black uppercase tracking-widest italic leading-relaxed">
-              Includes: <span className="text-white underline decoration-red-600 underline-offset-4 tracking-tighter">RootOS_Alpha_Key</span>
-            </span>
-          </div>
-        </div>
-        
-        <div className="w-full lg:w-1/2 text-left">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-[0.9]">
-            The Paradox <br /><span className="text-red-600">Shift</span>
-          </h2>
-          <p className="text-red-600 mb-8 italic text-lg tracking-tight font-bold underline decoration-red-600 decoration-1 underline-offset-4">"De handleiding voor wie de simulatie wil verlaten."</p>
-          <ul className="space-y-6 text-zinc-400 font-mono text-sm uppercase">
-            {[
-              "De-installeer de 12 'Social Malware' scripts.",
-              "Reality Scanning: Leer de patronen van het systeem zien.",
-              "Timeline Jumping: Forceer beslissingen vanuit je doel.",
-              "Access Key: Activeer je RootOS Dashboard login."
-            ].map((point, i) => (
-              <li key={i} className="flex items-center gap-4 group text-left">
-                <span className="w-2 h-2 bg-red-600 rotate-45 group-hover:scale-150 transition-transform duration-300"></span>
-                <span className="group-hover:text-white transition-colors">{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 6. MANIFESTO */}
-      <section className="max-w-4xl text-center mt-48 px-4 z-10 py-20 border-y border-zinc-900 mx-auto">
-        <blockquote className="text-3xl md:text-5xl font-light italic text-zinc-400 leading-tight">
-          "De meeste mensen sterven op hun 25e, maar worden pas begraven op hun 75e. <span className="text-red-600 font-bold not-italic underline decoration-2 underline-offset-8">Word geen statistiek."</span>
+      {/* 6. MANIFESTO QUOTE */}
+      <section className="max-w-4xl text-center mt-48 px-4 z-10 py-24 border-y border-zinc-900 mx-auto">
+        <blockquote className="text-4xl md:text-6xl font-light italic text-zinc-400 leading-[1.1]">
+          "Most people die at 25 and aren't buried until 75. <br />
+          <span className="text-red-600 font-bold not-italic underline decoration-2 underline-offset-8">Don't be a statistic."</span>
         </blockquote>
       </section>
 
-      {/* 7. OFFER */}
-      <section id="offer" className="max-w-xl w-full text-center mt-48 border-2 border-red-600 p-8 md:p-14 bg-red-950/5 shadow-[0_0_60px_rgba(220,38,38,0.15)] mb-32 z-10 mx-auto relative">
-        <div className="absolute top-0 right-0 bg-red-600 text-black text-[10px] font-black px-3 py-1 uppercase tracking-widest">
-          Auth_Level_01
-        </div>
-        <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tighter uppercase leading-none">
-          Initial_Payload:<br />The_Source_Code
-        </h2>
-        <p className="text-zinc-400 mb-10 italic text-sm leading-relaxed">
-          Krijg de blauwdruk en je eerste <span className="text-white font-bold underline decoration-red-600">Access Key</span> voor het RootOS Dashboard. <br />
-          Start je herprogrammering vandaag.
-        </p>
-        <div className="flex justify-center w-full">
-          <a 
-            href="https://thearchitecthacker.lemonsqueezy.com/checkout/buy/47116d76-5057-49d2-ad18-f4ac538dfc63" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="block w-full bg-red-600 text-black py-5 uppercase font-black tracking-[0.3em] hover:bg-white transition-all duration-300 text-center text-base shadow-[0_0_30px_rgba(220,38,38,0.4)]"
-          >
-            [ PURCHASE_ACCESS_€27 ]
-          </a>
-        </div>
-        <p className="mt-6 text-[10px] text-zinc-600 uppercase tracking-widest text-center w-full">
-          Status: Awaiting_Deployment // One-time Payment
-        </p>
-      </section>
-
-      {/* 7.5 UPGRADE TEASER */}
-      <section className="max-w-5xl w-full mb-48 px-6 py-20 border border-zinc-900 bg-zinc-950/30 text-center relative overflow-hidden z-10 mx-auto">
-        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-red-600/50 to-transparent"></div>
-        <h3 className="text-red-600 text-[10px] tracking-[0.4em] mb-4 uppercase font-bold text-center w-full">Hardware_Upgrade_Detected</h3>
-        <h2 className="text-4xl md:text-6xl font-black uppercase mb-8 tracking-tighter">
-          Root<span className="text-red-600">OS</span> v1.0
-        </h2>
-        <p className="text-zinc-500 text-base max-w-2xl mx-auto mb-12 font-mono leading-relaxed text-center">
-          Stop met het verzamelen van nutteloze data. Installeer de volledige interface om je gedrag te debuggen en je tijdlijn te forceren.
-          <span className="block mt-6 text-zinc-300 font-bold italic tracking-wide uppercase text-sm">The software for the 1% is here.</span>
-        </p>
-        <div className="flex justify-center w-full">
-          <a href="https://getrootos.com" className="inline-block border-2 border-red-600 bg-red-600/5 px-12 py-5 text-red-600 text-xs uppercase font-black tracking-[0.4em] hover:bg-red-600 hover:text-black transition-all duration-500 group relative">
-            <span className="relative z-10">[ VIEW_SYSTEM_REQUIREMENTS ]</span>
-            <div className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
-          </a>
-        </div>
-      </section>
-
-      {/* 8. FOOTER */}
+      {/* 7. FOOTER */}
       <footer className="w-full max-w-7xl py-16 border-t border-zinc-900 flex flex-col items-center gap-10 text-[10px] text-zinc-600 tracking-widest uppercase z-10 mx-auto">
-        <div className="flex flex-wrap justify-center gap-12 text-zinc-400">
-          <a href="https://tiktok.com/@thearchitecthacker" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">
-            [ TIKTOK ]
-          </a>
-          <a href="https://instagram.com/thearchitecthacker" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">
-            [ INSTAGRAM ]
-          </a>
-          <a href="https://x.com/TheArchyHacker" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">
-            [ X_STATION ]
-          </a>
-          <a href="/terms" className="hover:text-red-600 transition-colors">
-            [ TERMS_AND_CONDITIONS ]
-          </a>
+        <div className="flex flex-wrap justify-center gap-12 text-zinc-400 font-black">
+          <a href="https://tiktok.com/@thearchitecthacker" className="hover:text-red-600 transition-colors">[ TIKTOK ]</a>
+          <a href="https://instagram.com/thearchitecthacker" className="hover:text-red-600 transition-colors">[ INSTAGRAM ]</a>
+          <a href="https://x.com/TheArchyHacker" className="hover:text-red-600 transition-colors">[ X_STATION ]</a>
+          <a href="/terms" className="hover:text-red-600 transition-colors">[ TERMS_AND_CONDITIONS ]</a>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 border-t border-zinc-900/50 pt-10 px-4">
-          <div className="text-zinc-700 italic text-center md:text-left">
+          <div className="text-zinc-700 italic">
             Location: Portugal_District_6ha // Signal: Strong
           </div>
           <div className="flex flex-wrap justify-center gap-8 items-center">
@@ -225,7 +192,7 @@ export default function Home() {
               <span className="w-1.5 h-1.5 bg-red-600 rounded-full"></span> 
               Nodes_Live: 1,402
             </span>
-            <span className="text-zinc-500">© 2026 The Architect Hacker</span>
+            <span className="text-zinc-500 font-black">© 2026 The Architect Hacker</span>
           </div>
         </div>
       </footer>
